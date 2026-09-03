@@ -1,0 +1,15 @@
+[client]
+showErrorDetails = "none"
+toolbarMode = "viewer"
+
+[browser]
+gatherUsageStats = false
+
+# 종이(한지) 톤 — 참고: 개인연금ETF포커스_BM점검_FY26.html (38단계 디자인 기준)
+[theme]
+base = "light"
+primaryColor = "#b8893a"             # 골드 — 포커스·슬라이더·선택 강조
+backgroundColor = "#f4efe6"          # 종이
+secondaryBackgroundColor = "#fffdf8" # 카드
+textColor = "#23201c"                # 잉크
+font = "serif"

@@ -1,0 +1,13 @@
+#!/bin/sh
+# 커밋 전 DRM 봉투 검사. 켜는 법(PC마다 한 번):
+#   git config core.hooksPath .githooks
+if [ -x "venv/Scripts/python.exe" ]; then
+    PY="venv/Scripts/python.exe"
+elif command -v python >/dev/null 2>&1; then
+    PY="python"
+else
+    echo "pre-commit: 파이썬을 못 찾아 DRM 검사를 건너뜁니다." >&2
+    exit 0
+fi
+
+exec "$PY" tools/check_drm.py

@@ -1,0 +1,15 @@
+# 국내 분배형 ETF 수집·분류 도구 - 필요한 라이브러리
+requests==2.32.3      # 세이브로 서버에 요청 보내기
+pandas==2.2.3         # 표(데이터프레임) 처리
+numpy==2.4.6          # NAV 숫자형·유한값 검증
+openpyxl==3.1.5       # 엑셀(.xlsx) 저장
+holidays==0.57        # 한국·미국 공휴일 (매수마감일 = 기준일 2영업일 전 계산용)
+exchange_calendars==4.13.2  # 한국(XKRX)·미국(XNYS) 개장일 (배당락/매수마감 영업일 계산)
+yfinance==1.5.2       # 미국 상장 ETF 배당·시세·환율 (무료, API 키 없음)
+icalendar==7.2.2      # .ics 캘린더 읽기 (대시보드 일정 표시)
+streamlit==1.60.0     # 웹 대시보드
+plotly==6.9.0         # 대시보드 차트
+pykrx==1.2.8          # KRX ETF 종가·NAV·괴리율 조회
+pyparsing==3.3.2      # pykrx→matplotlib 전이 의존성 (없으면 pykrx import 실패)
+pytest==9.1.1         # 자동 검증 테스트
+truststore

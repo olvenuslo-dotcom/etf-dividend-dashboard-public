@@ -1,0 +1,17 @@
+#!/bin/sh
+# 푸시 전 DRM 봉투·키 파일 검사. 켜는 법(PC마다 한 번):
+#   git config core.hooksPath .githooks     (또는 tools\install_hooks.bat)
+#
+# pre-commit 과 달리 **올라가는 커밋 안의 내용**을 본다. 그래서
+# --no-verify 로 우회한 커밋도, 훅이 안 깔린 다른 PC에서 만들어져
+# 들어온 커밋도 여기서 걸린다.
+if [ -x "venv/Scripts/python.exe" ]; then
+    PY="venv/Scripts/python.exe"
+elif command -v python >/dev/null 2>&1; then
+    PY="python"
+else
+    echo "pre-push: 파이썬을 못 찾아 DRM 검사를 건너뜁니다." >&2
+    exit 0
+fi
+
+exec "$PY" tools/check_drm.py --push

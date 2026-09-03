@@ -1,0 +1,7 @@
+# 훅은 셸 스크립트라 CRLF가 되면 실행이 안 된다 — LF로 고정
+.githooks/* text eol=lf
+
+# 엑셀·이미지는 텍스트로 취급하면 안 된다(줄바꿈 변환에 깨진다)
+*.xlsx binary
+*.jpg  binary
+*.png  binary

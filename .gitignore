@@ -1,0 +1,53 @@
+# ── 올리면 안 되는 것 ──────────────────────────────────────
+# 증권사 계좌 화면 캡처 (잔고·평가금액이 그대로 찍혀 있다)
+data/private/
+
+# 화이트리스트 원본 이미지 (회사에서 받은 자료)
+data/reference/*.jpg
+data/reference/*.png
+
+# 작업하며 찍어 둔 화면 캡처 — 이어받는 데 필요 없다
+캡처*.png
+# 참고용으로 루트에 던져 놓는 화면 사진 (요구사항 전달용, 저장소에 남길 것 아님)
+/*.jpg
+/*.jpeg
+/*.png
+photo_*.jpg
+
+# ── 환경·캐시 ──────────────────────────────────────────────
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 로컬에서만 쓰는 권한 설정
+.claude/settings.local.json
+
+# 회사 보안장비 인증서를 합친 CA 번들 — PC마다 달라서 자동 생성한다 (src/corp_ca.py)
+data/corp-ca-bundle.pem
+
+# ── OS·편집기 ──────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# 수급 원자료 캐시 — 다시 받으면 되는 것이라 올리지 않는다
+data/flow_cache/
+# KIS 하루 단위 종목 캐시 (구성종목·투자자별) — 다시 받으면 된다
+data/kis_cache/
+
+# API 키·로그인 정보 — 절대 올리지 않는다 (src/env_keys.py 가 읽는다)
+.env
+# KIS 토큰·데이터 캐시는 저장소 밖 ~/.kis/ 에 있다 (여러 프로젝트가 공유)
+
+# 수집 로그 — 기계마다 다르고 계속 자란다
+data/ddr5_collect.log
+data/etf_refresh.log
+data/holdings_collect.log
+# 대시보드 서버 로그 (독립 프로세스로 띄울 때 생긴다)
+data/dashboard.log
+data/dashboard.log.err
